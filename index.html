@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komtainer Beer | Rock, Lúpulo & Gastronomia em Piracicaba</title>
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Arquivo CSS Externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Notice Bar -->
+    <div class="announcement-bar">
+        ⚡ FESTA K5 - 5 ANOS KOMTAINER | 18 DE JULHO NO ENGENHO CENTRAL • GARANTA SEU INGRESSO
+    </div>
+
+    <!-- Header / Nav -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-beer-mug-empty"></i> KOMTAINER BEER</a>
+            <ul class="nav-links">
+                <li><a href="#k5-festa">Festa 5 Anos</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#diferenciais">Ambiente</a></li>
+                <li><a href="#avaliacoes">Avaliações</a></li>
+                <li><a href="#localizacao">Endereço</a></li>
+                <li><a href="#cardapio" class="btn-nav-order"><i class="fa-solid fa-cart-shopping"></i> Fazer Pedido</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge"><i class="fa-solid fa-fire"></i> Rock & Lúpulo em Piracicaba</span>
+        <h1>Cerveja Artesanal Gelada & <br><span>O Melhor do Rock 'n' Roll</span></h1>
+        <p>Sua chopperia de referência no Centro de Piracicaba. Lanches artesanais, porções generosas e ambiente inesquecível.</p>
+        
+        <div class="hero-cta-group">
+            <a href="#cardapio" class="btn-primary"><i class="fa-solid fa-utensils"></i> Ver Cardápio Interativo</a>
+            <a href="https://wa.me/5519974057515?text=Ol%C3%A1!%20Gostaria%20de%20reservar%20uma%20mesa%20no%20Komtainer!" target="_blank" class="btn-secondary"><i class="fa-brands fa-whatsapp"></i> Reservar Mesa</a>
+        </div>
+    </section>
+
+    
+
+    <!-- Interactive Menu Section -->
+    <section id="cardapio">
+        <div class="section-header">
+            <span class="section-subtitle">Peça Online ou na Mesa</span>
+            <h2 class="section-title">Nosso Cardápio Especial</h2>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="category-filters">
+            <button class="filter-btn active" onclick="filterMenu('all', event)">Todos</button>
+            <button class="filter-btn" onclick="filterMenu('chopp', event)">Chopps & Bebidas</button>
+            <button class="filter-btn" onclick="filterMenu('burgers', event)">Hambúrgueres</button>
+            <button class="filter-btn" onclick="filterMenu('porcoes', event)">Porções & Snacks</button>
+        </div>
+
+        <!-- Menu Items Grid -->
+        <div class="menu-grid">
+            <div class="menu-card" data-category="chopp">
+                <span class="menu-card-badge">Mais Pedido</span>
+                <div>
+                    <h3>Chopp Artesanal IPA (500ml)</h3>
+                    <p>Cerveja de amargor marcante, aroma cítrico e notas tropicais. Perfeita para quem ama lúpulo de verdade.</p>
+                </div>
+                <div class="menu-card-bottom">
+                    <span class="price">R$ 18,00</span>
+                    <button class="btn-add-item" onclick="addToCart('Chopp Artesanal IPA (500ml)', 18.00)"><i class="fa-solid fa-plus"></i> Adicionar</button>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="chopp">
+                <div>
+                    <h3>Chopp Pilsen Trincando (500ml)</h3>
+                    <p>Clássico, leve, puro maltado e servido na temperatura trincando de gelada.</p>
+                </div>
+                <div class="menu-card-bottom">
+                    <span class="price">R$ 12,00</span>
+                    <button class="btn-add-item" onclick="addToCart('Chopp Pilsen (500ml)', 12.00)"><i class="fa-solid fa-plus"></i> Adicionar</button>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="chopp">
+                <div>
+                    <h3>Cider Artesanal Komtainer</h3>
+                    <p>Sidra de maçã fermentada, levemente frisante, refrescante e equilibrada.</p>
+                </div>
+                <div class="menu-card-bottom">
+                    <span class="price">R$ 16,00</span>
+                    <button class="btn-add-item" onclick="addToCart('Cider Artesanal', 16.00)"><i class="fa-solid fa-plus"></i> Adicionar</button>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="burgers">
+                <span class="menu-card-badge">Destaque</span>
+                <div>
+                    <h3>Burguer Komtainer Especial</h3>
+                    <p>Blend bovino 180g grelhado no fogo, queijo derretido, bacon crocante e maionese especial da casa no pão brioche.</p>
+                </div>
+                <div class="menu-card-bottom">
+                    <span class="price">R$ 34,00</span>
+                    <button class="btn-add-item" onclick="addToCart('Burguer Komtainer Especial', 34.00)"><i class="fa-solid fa-plus"></i> Adicionar</button>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="porcoes">
+                <span class="menu-card-badge">Favorito</span>
+                <div>
+                    <h3>Fritas com Pulled Pork</h3>
+                    <p>Porção de batatas bem crocantes cobertas com paleta suína desfiada ao molho barbecue e queijo cremoso.</p>
+                </div>
+                <div class="menu-card-bottom">
+                    <span class="price">R$ 38,00</span>
+                    <button class="btn-add-item" onclick="addToCart('Fritas com Pulled Pork', 38.00)"><i class="fa-solid fa-plus"></i> Adicionar</button>
+                </div>
+            </div>
+
+            <div class="menu-card" data-category="porcoes">
+                <div>
+                    <h3>Chickpea Snack (Vegano)</h3>
+                    <p>Grão-de-bico crocante temperado com especiarias e páprica defumada. Acompanhamento perfeito para o chopp.</p>
+                </div>
+                <div class="menu-card-bottom">
+                    <span class="price">R$ 22,00</span>
+                    <button class="btn-add-item" onclick="addToCart('Chickpea Snack', 22.00)"><i class="fa-solid fa-plus"></i> Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="diferenciais" style="background: rgba(255,255,255,0.01);">
+        <div class="section-header">
+            <span class="section-subtitle">Por que o Komtainer é Diferente?</span>
+            <h2 class="section-title">A Experiência Komtainer</h2>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-credit-card"></i>
+                <h3>Cartão de Consumo</h3>
+                <p>Sistema individual rápido e sem filas. Cadastrou, consumiu e pagou sem complicações.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-guitar"></i>
+                <h3>Música ao Vivo</h3>
+                <p>O melhor do Classic Rock, Pop Rock e bandas autorais movimentando a noite de Piracicaba.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-drumstick-bite"></i>
+                <h3>Gastronomia Raiz</h3>
+                <p>Porções artesanais, hambúrgueres suculentos e a famosa maionese especial do chef.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-motorcycle"></i>
+                <h3>Delivery Rápido</h3>
+                <p>Receba nossos chopps trincando e lanches quentinhos diretamente na sua casa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="avaliacoes">
+        <div class="section-header">
+            <span class="section-subtitle">O Que Dizem Nossos Amigos</span>
+            <h2 class="section-title">Nota 4,8 ★ (109+ Avaliações no Google)</h2>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Lugar com ambiente muito agradável! Comida, chopp artesanal e atendimento excelentes! Indico!! A porção de fritas com pulled pork é show."</p>
+                </div>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">RM</div>
+                    <div class="reviewer-info">
+                        <h4>Raquel Martin</h4>
+                        <small>Local Guide no Google</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Uma grata surpresa, um bar muito bacana com ambientes distintos! Atendimento nota 10 e valor humano sem igual."</p>
+                </div>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">MP</div>
+                    <div class="reviewer-info">
+                        <h4>Marcelo Piveta</h4>
+                        <small>Local Guide no Google</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="review-card">
+                <div>
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Komtainer Beer é o bar perfeito para quem gosta de apreciar um bom Chopp gelado com música ao vivo e ótimas porções."</p>
+                </div>
+                <div class="reviewer">
+                    <div class="reviewer-avatar">PM</div>
+                    <div class="reviewer-info">
+                        <h4>Power Motion</h4>
+                        <small>Local Guide no Google</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="localizacao">
+        <div class="section-header">
+            <span class="section-subtitle">Vem Pro Komtainer</span>
+            <h2 class="section-title">Onde Estamos & Horários</h2>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <h4>Endereço</h4>
+                        <p>R. Benjamin Constant, 589 - Centro</p>
+                        <p>Piracicaba - SP, 13400-050</p>
+                        <small style="color:var(--gold)">Código Plus: 79G3+PR Centro</small>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <h4>Horário de Funcionamento</h4>
+                        <p>Quarta a Domingo: A partir das 17h00 até 23h30</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <h4>WhatsApp / Telefone</h4>
+                        <p><strong>(19) 97405-7515</strong></p>
+                    </div>
+                </div>
+
+                <a href="https://maps.google.com/?q=R.+Benjamin+Constant,+589+-+Centro,+Piracicaba+-+SP" target="_blank" class="btn-primary" style="margin-top:1rem; width:100%; justify-content:center;">
+                    <i class="fa-solid fa-route"></i> Abrir no Google Maps
+                </a>
+            </div>
+
+            <div class="map-container"> 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.13849978075!2d-47.648022224695126!3d-22.723092979384862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c631a755d8c41f%3A0xcb0167a1ec54a508!2sR.%20Benjamin%20Constant%2C%20589%20-%20Centro%2C%20Piracicaba%20-%20SP%2C%2017560-081!5e0!3m2!1spt-BR!2sbr!4v1788300796517!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Order Button -->
+    <div class="floating-cart" onclick="toggleCartModal()">
+        <i class="fa-solid fa-cart-shopping" style="font-size: 1.2rem;"></i>
+        <span>Meu Pedido</span>
+        <div class="cart-count" id="cartCount">0</div>
+    </div>
+
+    <!-- Cart Overlay & Modal -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCartModal()"></div>
+    
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3><i class="fa-solid fa-basket-shopping"></i> Seu Pedido</h3>
+            <button class="close-cart" onclick="toggleCartModal()">&times;</button>
+        </div>
+        
+        <div class="cart-body" id="cartItems">
+            <p style="color: var(--text-muted); text-align: center; margin-top: 2rem;">Seu carrinho está vazio.<br>Escolha itens do cardápio!</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalValue" style="color:var(--gold);">R$ 0,00</span>
+            </div>
+            <button class="btn-send-whatsapp" onclick="sendWhatsAppOrder()">
+                <i class="fa-brands fa-whatsapp"></i> Finalizar Pedido no WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#" class="footer-logo"><i class="fa-solid fa-beer-mug-empty"></i> KOMTAINER BEER</a>
+        <p>Rock & Lúpulo • O ponto de encontro de Piracicaba</p>
+        
+        <div class="social-links">
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://wa.me/5519974057515" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+
+        <p>&copy; 2026 Komtainer Beer. R. Benjamin Constant, 589 - Centro, Piracicaba - SP.</p>
+    </footer>
+
+    <!-- Arquivo JavaScript Externo -->
+    <script src="script.js"></script>
+</body>
+</html>
